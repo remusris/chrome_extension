@@ -1,5 +1,5 @@
 const millisecondsPerWeek = 1000 * 60 * 60 *24 * 7;
-const oneWeekAgo = (new Date) .getTime() - millisecondsPerWeek;
+const oneWeekAgo = (new Date).getTime() - millisecondsPerWeek;
 
 browsingHistoryList = []
 
@@ -7,8 +7,8 @@ chrome.history.search({
     text: '',
     startTime: oneWeekAgo,
     maxResults: 30
-},  function (data) {
-        data. forEach(function (page) {
+},  function(data) {
+        data.forEach(function(page) {
             console.log(page.url);
             browsingHistoryList.push(page);
     });
