@@ -6,13 +6,32 @@ browsingHistoryList = []
 chrome.history.search({
     text: '',
     startTime: oneWeekAgo,
-    maxResults: 30
+    maxResults: 10
 },  function(data) {
         data.forEach(function(page) {
             console.log(page.url);
             browsingHistoryList.push(page);
     });
 });
+
+// const myCallBack = (details) => console.log('the details are ', JSON.stringify(details.transitionQualifiers));
+
+const myFilters = 
+chrome.webNavigation.onHistoryStateUpdated.addListener(
+    // myCallBack
+    // function(details) {console.log(JSON.stringify(details.transitionQualifiers))}
+   function(details) {
+        console.log(details.transitionQualifiers)
+        print(JSON.stringify(details.transitionQualifiers))
+    }
+);
+
+
+
+
+
+
+
 
 // async function getCurrentTab() {
 //     let queryOptions = { active: true, lastFocusedWindow: true };

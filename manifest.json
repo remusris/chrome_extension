@@ -8,7 +8,7 @@
       "service_worker": "browsing_history.js"
     },
     "permissions": [
-        "history"
+        "history", "webNavigation"
     ]
   }
   
