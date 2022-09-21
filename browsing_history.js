@@ -14,16 +14,17 @@ chrome.history.search({
     });
 });
 
-// const myCallBack = (details) => console.log('the details are ', JSON.stringify(details.transitionQualifiers));
+const myCallBack = (details) => console.log(JSON.stringify(details.transitionQualifiers));
 
 const myFilters = 
 chrome.webNavigation.onHistoryStateUpdated.addListener(
-    // myCallBack
+    myCallBack
     // function(details) {console.log(JSON.stringify(details.transitionQualifiers))}
-   function(details) {
-        console.log(details.transitionQualifiers)
-        print(JSON.stringify(details.transitionQualifiers))
-    }
+//    function(details) {
+//         // console.log(details.transitionQualifier)
+//         // print(JSON.stringify(details.transitionType))
+        
+//     }
 );
 
 
