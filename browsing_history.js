@@ -14,7 +14,25 @@ chrome.history.search({
     });
 });
 
-const myCallBack = (details) => console.log(JSON.stringify(details.transitionQualifiers));
+// var historyVisits = function(visits) {
+
+//     var ul = document.createElement('ul');
+
+//     for (visits in browsingHistoryList) {
+
+//     }
+// }
+
+var ul = document.createElement('ul');
+
+for (i = 0, i <= browsingHistoryList.length - 1, i++) {
+    var li = document.createElement('li');
+    li.innerHTML = browsingHistoryList[i];
+
+    ul.appendChild(li);
+}
+
+// const myCallBack = (details) => console.log(JSON.stringify(details.transitionQualifiers));
 
 const myFilters = 
 chrome.webNavigation.onHistoryStateUpdated.addListener(
@@ -34,12 +52,16 @@ chrome.webNavigation.onHistoryStateUpdated.addListener(
 
 
 
+
+
+
+
 // async function getCurrentTab() {
 //     let queryOptions = { active: true, lastFocusedWindow: true };
 //     // tab will either be a `tabs.Tab` instance or undefined
 //     let [tab] = await chrome.tabs.query (queryOptions);
 //     return tab;
-// }
+// } 
 
 // chrome.tabs. query({
 //     active: true,
